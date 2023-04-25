@@ -1,0 +1,7 @@
+black
+coverage
+fastapi[all]
+fastapi-cache2
+flake8
+pytest
+saxonche==12.1.0
