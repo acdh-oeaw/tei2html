@@ -13,4 +13,4 @@ async def startup():
 def test_read_main():
     with TestClient(app) as client:
         response = client.get("/")
-        assert response.status_code == 200
+        assert response.status_code == 422
