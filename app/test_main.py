@@ -4,6 +4,10 @@ from fastapi_cache.backends.inmemory import InMemoryBackend
 
 from .main import app
 
+FIXTURES_BASE = "https://raw.githubusercontent.com/csae8092/"
+TEI = f"{FIXTURES_BASE}tei2html/main/fixtures/tei.xml"
+XSLT = f"{FIXTURES_BASE}tei2html/main/fixtures/xsl.xsl"
+
 
 @app.on_event("startup")
 async def startup():
@@ -18,5 +22,5 @@ def test_001_missing_params():
 
 def test_002_with_params():
     with TestClient(app) as client:
-        response = client.get("/?tei=https://id.acdh.oeaw.ac.at/thun/editions/kaiser-an-thun-07-15-a3-xxi-d634f.xml&xslt=https://tei4arche.acdh-dev.oeaw.ac.at/xsl/thun2arche.xsl")
+        response = client.get(f"/?tei={TEI}&xslt={XSLT}")
         assert response.status_code == 200
