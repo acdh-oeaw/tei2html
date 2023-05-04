@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 secret.env
 Untitled.ipynb
+app/static/about.html
