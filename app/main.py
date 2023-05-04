@@ -6,6 +6,7 @@ from saxonche import PySaxonProcessor
 
 app = FastAPI()
 
+
 @app.get("/", response_class=HTMLResponse)
 async def root(tei: str, xslt: str):
     with PySaxonProcessor(license=False) as proc:
