@@ -22,5 +22,5 @@ def test_001_missing_params():
 
 def test_002_with_params():
     with TestClient(app) as client:
-        response = client.get(f"/?tei={TEI}&xslt={XSLT}")
+        response = client.get(f"/?tei={TEI}&xsl={XSLT}")
         assert response.status_code == 200
