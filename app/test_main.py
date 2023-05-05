@@ -4,7 +4,7 @@ from fastapi_cache.backends.inmemory import InMemoryBackend
 
 from .main import app
 
-FIXTURES_BASE = "https://raw.githubusercontent.com/csae8092/"
+FIXTURES_BASE = "https://raw.githubusercontent.com/acdh-oeaw/"
 TEI = f"{FIXTURES_BASE}tei2html/main/fixtures/tei.xml"
 XSLT = f"{FIXTURES_BASE}tei2html/main/fixtures/xsl.xsl"
 
