@@ -8,10 +8,10 @@ app = FastAPI()
 
 
 @app.get("/", response_class=HTMLResponse)
-async def root(tei: str, xslt: str):
+async def root(tei: str, xsl: str):
     with PySaxonProcessor(license=False) as proc:
         xsltproc = proc.new_xslt30_processor()
         document = proc.parse_xml(xml_uri=tei)
-        executable = xsltproc.compile_stylesheet(stylesheet_file=xslt)
+        executable = xsltproc.compile_stylesheet(stylesheet_file=xsl)
         output = executable.transform_to_string(xdm_node=document)
     return HTMLResponse(content=output, status_code=200)
